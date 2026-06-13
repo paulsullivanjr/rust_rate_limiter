@@ -1,14 +1,8 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! A production-grade rate limiter library.
+//!
+//! This crate provides multiple rate-limiting algorithms behind a common
+//! [`RateLimiter`](limiter::RateLimiter) trait. All algorithms read the current
+//! time through the [`Clock`](clock::Clock) trait, which makes time-dependent
+//! behavior fully testable.
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub mod clock;
